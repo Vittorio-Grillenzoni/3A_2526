@@ -4,20 +4,32 @@
     Utilizzo della forma iterativa do-while.
 */
 #include <stdio.h>
+#include <time.h>
+#include <stdlib.h>
 
 int main(){
     int scelta;     // variabile per la scelta utente.
     int num;        // variabile per il numero in input dell'utente.
     int div;        // variabile per eventuali operazioni sui divisori di un numero.
     int cnt;        // variabile per conteggi tipo divisori, multipli etc...
+    int sommaDiv;   // variabile per sommare i divisori di un numero.
+    int n;
+    const int MAX = 1000;
     char junk;
-    int sommaDiv
+    srand(1);
+    
 
     do{
         printf("-- MENU --\n");
         printf("1 -> Visualizza divisori\n");
         printf("2 -> Verifica numero primo\n");
         printf("3 -> Verifica numero perfetto\n");
+
+        printf("4 -> Genera N numeri casuali <1000 (n inserito da tastiera)\n");
+        printf("5 -> Genera n numeri dispari <1000 (n inserito da tastiera)\n");
+        printf("6 -> Genera n numeri casuali crescenti <9999 (n inserito da tastiera)\n");
+        printf("7 -> Genera un numero casuale, determina il successivo numero primo\n");
+
         printf("0 -> Termina Programma!\n");
         printf("Scelta: ");
         scanf("%d", &scelta);
@@ -42,10 +54,14 @@ int main(){
                 break;
             }
             case 2:{
+                // Determina se un numero è primo oppure no.
+                // Determine whether a number is prime or not.
                 printf("Inserisci un numero: ");
                 scanf("%d", &num);
                 junk = getchar();
 
+                // Ciclo di conteggio divisori
+                // Divider counting cycle
                 cnt = 0;
                 for(div=1; div<=num; div++){
                     if(num%div == 0){
@@ -53,6 +69,8 @@ int main(){
                     }
                 }
 
+                // Verifica sul numero di divisori trovato.
+                // Check the number of divisors found.
                 if(cnt <= 2){
                     printf("Il numero %d risulta PRIMO\n", num);
                 }
@@ -63,14 +81,47 @@ int main(){
                 break;
             }
             case 3:{
-                printf("Sono nel caso 3...\n");
+                // Verifica se un numero inserito da tastiera è perfetto oppure no
+                // Check if a number entered from the keyboard is correct or not
                 printf("Inserisci un numero: ");
                 scanf("%d", &num);
-                
+                junk = getchar();
+
+                // somma dei divisori di un numero.
+                // /um of the divisors of a number.
+                sommaDiv = 0;
+                for(div=1; div<=num; div++){
+                    if(num%div == 0){
+                        sommaDiv = sommaDiv + div;
+                    }
+                }
+
+                // verifica della somma e messaggio all'utente.
+                // Verify the amount and message to the user.
+                if(sommaDiv == (num*2)){
+                    printf("Il numero %d risulta essere PERFETTO.\n", num);
+                }
+                else{
+                    printf("Il numero %d NON risulta essere PERFETTO.\n", num);
+                }
+                printf("\n\n");
                 break;
             }
-        }
+            default:{
+                if(scelta != 0){
+                    printf("Scelta non valida!\n");
+                    printf("\n\n");
+                }
+                break;
+            }
+            case 4:{    //Genera N numeri casuali <1000 (n inserito da tastiera)
+                printf("Inserire un numero: ");
+                scanf("%d", &n);
+                for(int i=0; i<n; i++);
+                printf("%d \n", rand());
 
+            }
+        }
     }while(scelta != 0);
     return(0);
 }

@@ -117,9 +117,8 @@ int main(){
             case 4:{    //Genera N numeri casuali <1000 (n inserito da tastiera)
                 printf("Inserire un numero: ");
                 scanf("%d", &n);
-                for(int i=0; i<n; i++);
-                printf("%d \n", rand());
-
+                for(cnt)
+                
             }
         }
     }while(scelta != 0);

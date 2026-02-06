@@ -25,13 +25,15 @@ int main(){
                     }
                     v++;
                 }
-                if(cnt3 == 2){
-                    printf("%d ", d)
+                if(cnt3 <= 2){
+                    printf("%d ", d);
                 }
+                cnt3 = 0;
             }
             d++;
         }
-        printf("divisori totali: %d", cnt2);
+        printf("divisori totali: %d \n", cnt2);
+        cnt2 = 0;
     }
 return (0);
 }

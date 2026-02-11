@@ -32,6 +32,7 @@ bool isPitagora(int _pi);
 int main(){
     int valore;
     int junk;
+    int n1, n2, n3;
     for(valore=1; valore <= 7; valore++){
         if(isPrimo(valore))
             printf("%d -> Primo\n", valore);
@@ -47,7 +48,10 @@ int main(){
             printf("%d -> Primo\n", valore);
     }
     printf("\n\n");
-    
+    scanf("%d", &n1);
+    scanf("%d", &n2);
+    scanf("%d", &n3);
+    if(isPitagora(n1, n2, n3))
     return(0);
 }
 
@@ -81,16 +85,13 @@ bool isPerfect(int _pe, int div, int somma){
         
 }
 
-bool isPitagora(int n, int v, int v1, int pitagora){
-
-    printf("Inserire un valore: ");
-    scanf("%d", &n);
-    pitagora = (v*v) + (v1*v1);
-
-    if (pitagora == (n*n)){
-        printf("Il numero è una terna pitagorica");
+bool isPitagora(int n, int v, int v1){
+    int sum = 0;
+    sum = v*v + v1*v1;
+    if (sum == (n*n)){
+        return (true);
     }
     else{
-        printf("Il numero non è una terna pitagorica");
+        return(false);
     }
 }

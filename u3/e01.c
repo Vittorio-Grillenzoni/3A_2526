@@ -16,8 +16,8 @@ bool isPrimo(int _n);
  * @param int Numero da verificare
  * @return boolean true/false
  */
-bool isPerfect(int _pe)
-scrivi il prototipo
+bool isPerfect(int _pe);
+//scrivi il prototipo
 /**
  * Verifica terna pitagorica, se n1^2+n2^2 = n3^2
  * @param int _n1 Primo valore
@@ -25,8 +25,8 @@ scrivi il prototipo
  * @param int _n3 Terzo valore
  * @return boolean true/false
  */
-bool isPitagora(int _pi)
-scrivi il prototipo
+bool isPitagora(int _pi);
+//scrivi il prototipo
 
 // sezione MAIN PROGRAM
 int main(){
@@ -68,13 +68,29 @@ bool isPrimo(int _n){
         return(false);
 }
 
-bool isPerfect(int _pe){
-    int div;
-    int pe;
-    int somma;
+bool isPerfect(int _pe, int div, int somma){
+    
+    printf("Inserire un valore: ");
+    scanf("%d", &pe);
+    for(div = 1; div <= pe; div++){
+        if (pe%div != 0){
+            
+        }
 
-    printf("Inserire un valore: ")
-    scanf("%d", &pe)
-    for(div = 1; div <= pe; div++)
-        if
+    }
+        
+}
+
+bool isPitagora(int n, int v, int v1, int pitagora){
+
+    printf("Inserire un valore: ");
+    scanf("%d", &n);
+    pitagora = (v*v) + (v1*v1);
+
+    if (pitagora == (n*n)){
+        printf("Il numero è una terna pitagorica");
+    }
+    else{
+        printf("Il numero non è una terna pitagorica");
+    }
 }

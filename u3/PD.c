@@ -10,6 +10,8 @@ int main(){
         printf("Inserisci un valore tra 1 e 10: ");
         scanf("%d\n", &N);
     } while(N < 1 || N > 10);
+    printf("--Inserito: %d\n", N);
+
     if(N % 2 == 0){
         div = N/2;
         do{

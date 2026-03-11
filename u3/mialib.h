@@ -1,0 +1,2 @@
+/*Contiene solo i prototipi dellefunzioni che vado a sviluppare 
+per la mia libreria personale*/

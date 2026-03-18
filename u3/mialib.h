@@ -50,3 +50,10 @@ int inputValoreRange(int _min, int _max);
  * @return Valore random generato compreso nel range min-max
  */
 int randomValoreRange(int _min, int _max);
+
+/**
+ * Visualizza a video N numeri casuali primi (compresi tra 1 e 999) successivi ad un valore di riferimento
+ * @param int Valore di riferimento
+ * @param int Numero di valori da visualizzare
+ */
+int visualizzaPrimi(int _val, int _n);

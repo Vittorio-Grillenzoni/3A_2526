@@ -1,13 +1,95 @@
-/*Contiene il codice C delle funzioni che vado a sviluppare
-per la mia libreria personale*/
+/*  Contiene il codice C delle diverse funzioni che compongono la mia libreria. */
 #include <stdlib.h>
 #include <time.h>
 #include <stdbool.h>
 #include "mialib.h"
-bool isPrimo(int _n){ ...
 
-bool isPerfect(int _pe)
+bool isPrimo(int _n){
+    int div;    // variabile per i divisori del numero passato come parametro.
+    int cnt;    // contatore per i divisori trovati del numero passato come parametro.
 
-bool isPitagora(int _pi)
+    cnt = 0;
+    for(div=1; div<=_n; div++){
+        if(_n%div == 0) // ho trovato un divisore! -> incremento il contatore
+            cnt++;
+    }
 
-int inputValoreRange(int _min, int _max)
+    if(cnt<=2)
+        return(true);
+    else
+        return(false);
+}
+
+bool isPerfect(int _n){
+    int div;
+    int somma;
+    
+    somma = 0;
+    div = 1;
+    while(div <= _n){
+        if(_n%div == 0){
+            somma = somma + div;
+        }
+        div = div + 1;
+    }
+    
+    if(somma == (_n*2))
+        return(true);
+    else
+        return(false);    
+}
+
+bool isTernaPitagorica(int _n1, int _n2, int _n3){
+    if((_n1*_n1) + (_n2+_n2) == (_n3*_n3))
+        return(true);
+    else
+        return(false);
+}
+
+int inputValoreRange(int _min, int _max){
+    int valore;
+
+    
+    return(valore);
+}
+
+int nextPrimo(int _val){
+    int nextP;
+    /* soluzione funzionante ma ottimizzabile 
+    bool primo;
+    int nextP;
+    int div;
+    nextP = _val;
+    do{
+        nextP = nextP + 1;
+        primo = true;
+        for(div=2; div<nextP; div++){
+            if(nextP%div == 0)
+                primo = false;
+        }
+    }while(primo == false);*/
+
+    //while(isPrimo(nextP) == false){
+    nextP = _val + 1;
+    while(!isPrimo(nextP)){
+        nextP = nextP + 1;
+    }
+
+    return(nextP);
+}
+
+int nextPrimo3(int _val) {
+    while (! isPrimo(++_val))
+        ;
+    return _val;
+}
+
+int prevPrimo(int _val){
+    int nextP;
+    nextP = _val;
+    do{
+        nextP = nextP 
+    }
+}
+
+int visualizzaPrimi()

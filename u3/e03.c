@@ -1,11 +1,8 @@
 #include <stdio.h>
 #include "mialib.c"
 
-int nextPrimo(int _val){
-    int nextP;
-    /* soluzione funzionante ma ottimizzabile
-    bool primo;
-    int nextP;
-    
-    */
+int main(){
+    int num = 20;
+    printf("Prossimo primo di %d: %d\n", num, nextPrimo(num));
+    printf("Primo precedente a %d: %d\n", num, prevPrimo(num));
 }

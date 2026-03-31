@@ -48,9 +48,19 @@ bool isTernaPitagorica(int _n1, int _n2, int _n3){
 
 int inputValoreRange(int _min, int _max){
     int valore;
-
-    
+    char junk;
+    do{
+        printf("Inserisci un valore: ");
+        scanf("%d", &valore);
+        junk = getchar();
+    }while(valore <_min || valore>_max);    
     return(valore);
+}
+
+int randomValoreRange(int _min, int _max){
+    int random;
+    random = _min + rand()%(_max - _min + 1);
+    return(random);
 }
 
 int nextPrimo(int _val){
@@ -77,7 +87,6 @@ int nextPrimo(int _val){
 
     return(nextP);
 }
-
 int nextPrimo3(int _val) {
     while (! isPrimo(++_val))
         ;
@@ -88,8 +97,104 @@ int prevPrimo(int _val){
     int nextP;
     nextP = _val;
     do{
-        nextP = nextP 
+        nextP = nextP - 1;
+    }while(!isPrimo(nextP));
+    return(nextP);
+}
+
+void visualizzaPrimi(int _val, int _n){
+    int cnt;
+    int num;
+
+    cnt = 1;
+    while(cnt <= _n){
+        num = randomValoreRange(1, 999);
+        if(isPrimo(num)){
+            printf("%d ", num);
+            cnt++;
+        }
     }
 }
 
-int visualizzaPrimi()
+void raddoppiaValore(int* _n){
+    int tmp;            // creo una variabile intera di supporto
+
+    printf("Addr ricevuto: %p\n", _n);
+
+    tmp = *_n;          // in tmp metto il contenuto della cella di memoria il cui indirizzo è un _n.
+    tmp = tmp * 2;      // raddoppio il valore contenuto in tmp.
+    *_n = tmp;          // nella cella di memoria all'indirizzo contenuto in _n metto il valore di tmp.
+
+    // equivalente a: *_n = (*_n)*2;
+}
+
+void calcolaAreaPerimetro(int _base, int _altezza, int* _area, int* _perimetro){
+    // creo variabili di appoggio per calcola area e perimetro.
+    int tmpArea;
+    int tmpPerimetro;
+
+    // eseguo i calcoli.
+    tmpArea = _base * _altezza;
+    tmpPerimetro = (_base+_altezza) * 2;
+
+    // assegno i valori calcolati nelle rispettive celle di memoria di cui conosci gli indirizzi.
+    *_area = tmpArea;
+    *_perimetro = tmpPerimetro;
+}
+
+void estraiCifra(int _num){
+    int r;
+    if(_num!=0){
+        r = _num%10;
+        estraiCifra(_num/10);
+        printf("%d ", r); 
+    }
+}
+
+void convertiBinario(int _n){
+    int r;
+    if(_n!=0){
+        r = _n%2;
+        convertiBinario(_n/2);
+        printf("%d ", r); 
+    }
+}
+
+bool scambiaValori(int* _a, int* _b){
+    int tmp;
+    // il primo valore è maggiore del secondo?ù
+    if(*_a > *_b){
+        tmp = *_a;
+        *_a = *_b;
+        *_b = tmp;
+        return(true);
+    }
+    else{
+        return(false);
+    }
+}
+/**
+ * ritorna il numero dei divisori di un numero
+ * @param int valore
+*/
+
+int divNumber(int _n){
+    int cnt=1;
+    for(cnt=1; cnt <= _n; cnt++){
+        if(_n % cnt == 0){
+            return(cnt);
+        }
+    }
+}
+
+int minorMax(int _n){
+    int n2;
+    printf("Inserire il secondo numero: ");
+    scanf("%d", &n2);
+    if(_n < n2){
+        return(n2);
+    }
+    else{
+        return(_n);
+    }
+}

@@ -114,3 +114,10 @@ int divNumber(int _n);
  * @return Numero maggiore o minore.
 */
 int minorMax(int _n);
+
+/**
+ * stampa il numero al contrario 256 -> 652
+ * @param int valore
+ * @return Numero al contrario
+*/
+int printreverse(int _n);

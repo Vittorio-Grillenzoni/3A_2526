@@ -198,3 +198,16 @@ int minorMax(int _n){
         return(_n);
     }
 }
+
+int printreverse(int _n){
+    int n2;
+    printf("Inserire un numero: ");
+    scanf("%d", &_n);
+    do{
+        n2 = _n % 10;
+        _n = _n / 10;
+        printf("%d", n2);
+    }while(_n != 0);
+    printf("\n");
+    return(n2);
+}

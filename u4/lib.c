@@ -15,3 +15,6 @@ void stampaVettore(int _vet[], int _dim){
         printf("%3d", _vet[i]);
     }
 }
+void stampaVettoreGrafico(int _vet[], int _dim){
+    
+}

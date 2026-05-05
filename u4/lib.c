@@ -16,5 +16,59 @@ void stampaVettore(int _vet[], int _dim){
     }
 }
 void stampaVettoreGrafico(int _vet[], int _dim){
-    
+    int i;
+    // put your code here...
+    printf("%c", 218);
+    for(i=0; i<_dim; i++){
+        printf("%c%c%c", 196,196,196);
+        if(i<_dim-1)
+            printf("%c", 194);
+        else
+            printf("%c", 191);
+    }
+
+    printf("\n");
+    printf("%c", 179);
+    for(i=0; i<_dim; i++){
+        printf("%3d%c", _vet[i],179);
+    }
+    printf("\n");
+    printf("%c", 192);
+    for(i=0; i<_dim; i++){
+        printf("%c%c%c", 196,196,196);
+        if(i<_dim-1)
+            printf("%c", 193);
+        else
+            printf("%c", 217);
+    }
+
+    printf("\n");
+    for(i=0; i<_dim; i++){
+        printf("%4d", i);
+    }
 }
+
+// Funzioni e03.c
+
+int convertiBinario(int _n, int _v[], int _dim){
+    int i;
+    if(_n < pow(2, _dim)){
+        for(i=0; i<_dim; i++){
+            _v[i]= _n%2;
+            _n= _n/2;
+        }
+    return(1);
+    }
+    else{
+
+    }
+}
+
+void stampaBinario(int _v[], int _dim){
+    int i;
+    for(i=_dim-1; i>=0; i--){
+        printf("%d", _v[i]);
+    }
+}
+
+//gcc e.c -lm 

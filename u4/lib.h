@@ -74,6 +74,7 @@ int convertiBinario(int _n, int _v[], int _dim);
  * @param int Dimensione del vettore.
  */
 void stampaBinario(int _v[], int _dim);
+
 /**
  * Stampa un vettore binario indicando la potenza di ogni singolo bit.
  * 
@@ -81,3 +82,25 @@ void stampaBinario(int _v[], int _dim);
  * @param int Dimensione del vettore.
  */
 void stampaBinarioBasic(int _vet[], int _dim);
+
+/**
+ * Funzione che realizza la somma tra bin1 e bin2 in bin3
+ * 
+ * @param int[] Vettore binario 1 - Primo numero
+ * @param int[] Vettore binario 2 - Secondo numero
+ * @param int[] Vettore binario 3 - Vettore risultante
+ * @param int Dimensione in bit dei vettori.
+ * @return 1/0 in caso affermativo o negativo che la funzione abbia generato overflow.
+ */
+int sommaBinaria(int _bin[], int _bin2[], int _bin3[], int _dim);
+
+/**
+ * 
+ * 
+ * @param int[] Vettore binario 1 - Primo numero
+ * @param int Numero da comparare
+ * @param int Dimensione in bit dei vettori.
+ * @return 1/0 in caso affermativo o negativo che la funzione abbia generato overflow.
+ */
+int setDistance(int v[], int _n, int dim);
+

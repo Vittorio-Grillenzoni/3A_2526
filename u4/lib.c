@@ -154,4 +154,20 @@ int i;
     }   
 }
 
+int sommaBinaria(int _bin1[], int _bin2[], int _bin3[]){
+    int i;
+    int riporto;
+
+    riporto = 0;
+    FOR(i=0; i<_dim; i++){
+        riporto = riporto + _bin1[i] + _bin2[i];
+        _bin3[i] = riporto % 2;
+        riporto = riporto / 2;
+    }
+}
+
+void setDistance(int v[], int _n, int dim) {
+    for (int i = 0; i < dim; i++)
+		v[i] = _n - v[i];
+}
 //gcc e.c -lm

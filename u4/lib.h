@@ -96,11 +96,10 @@ int sommaBinaria(int _bin[], int _bin2[], int _bin3[], int _dim);
 
 /**
  * 
- * 
  * @param int[] Vettore binario 1 - Primo numero
  * @param int Numero da comparare
  * @param int Dimensione in bit dei vettori.
- * @return 1/0 in caso affermativo o negativo che la funzione abbia generato overflow.
+ * @return 
  */
 int setDistance(int v[], int _n, int dim);
 

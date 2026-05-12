@@ -170,4 +170,14 @@ void setDistance(int v[], int _n, int dim) {
     for (int i = 0; i < dim; i++)
 		v[i] = _n - v[i];
 }
+
+int sumPer(int _a, int _b){
+    int sum;
+    int cnt=0;
+    
+    while(cnt <= _b){
+        sum = _a + _a;
+    }
+    printf("%d",sum);
+}
 //gcc e.c -lm

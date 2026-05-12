@@ -103,3 +103,11 @@ int sommaBinaria(int _bin[], int _bin2[], int _bin3[], int _dim);
  */
 int setDistance(int v[], int _n, int dim);
 
+/**
+ * 
+ * @param int[] Vettore
+ * @param int primo valore
+ * @param int secondo valore
+ * @return 
+ */
+int sumPer(int v[], int _a, int _b);
